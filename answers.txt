@@ -1,0 +1,61 @@
+[The Dataset]
+Q1. Why didn't the authors release the complete dataset?
+A1. Because the original read data was too large, and they were running out of time.
+
+Q2. Demanding exact k-mer matching in Kraken has benefits for removing human reads. Why?
+A2. Kraken database is constructed from complete bacterial, archaeal, and viral genomes in RefSeq, with over 99.9% accuracy on simulated 100bp reads of a metagenomic dataset. This makes it beneficial to use Kraken to assign non-human taxonomy in metagenomic sequencing.
+
+Q3. What is the SRA? How many samples are there in the SRA currently? How many bases are publicly available on the SRA in total? 
+A3. SRA is a publicly available repository of high throughput sequencing data made by NIH. As of 2020, SRA contains 9M records and 12PB of data.
+
+[Metagenomic pathogen detection using MMseqs2]
+Q1. Why might a protein-protein search be useful for finding bacterial or viral pathogens? How does this compare with Kraken's approach?
+Q2. In contrast to RNA-based search, protein-protein search ---
+
+[Assigning taxonomix labels]
+Q1.What is the most common species in this dataset? 
+A1.The most common species in the dataset is Ralstonia solanacearum, with 16.0449% of reads covered.
+
+Q2. Why are there so many different eukaryotic sequences? Were they really in the spinal fluid sample?
+A2. 365 species are included in the dataset, but only 10 species have a >1 percentage of reads covered. This may imply that a majority of the species analyzed were due to contamination in the spinal fluid sample.
+
+[What is the pathogen?]
+Q1. Based on the literature, which one is the most likely pathogen?
+A1. Powassan virus is the most likely pathogen, for it is a only recognized cause of encephalitis in North America, existing primarily in the northeastern region. The time from the tick bite to feeling sick ranges from 1 week to 1 month, also matching the patient's description.
+
+Q2. For which species do you find evidence in the metagenomic reads?
+A2. Of the 6 species, only the Powassan virus is included in the metagenomic reads.
+
+Q3. Approximately how many reads belong to the pathogen? Based on this number, how would you determine if it is significant evidence for an actual presence of this agent?
+A3. About 5.9074% of reads are covered by the clade rooted at species Powassan virus, with 958 reads.---
+
+[Investigating the pathogen]
+Q1. What is the taxon identifier of the pathogen? Did you find one or more?
+A1. The taxon identifier of Powassan virus is 11083.
+
+Q2. How many reads of the pathogen are in this resulting FASTA file?
+A2. 958 reads are in the FASTA file.
+
+[Assembling reads to proteins]
+Q1. Which proteins do you expect to find in the pathogen you discovered? Search the internet.
+A1. According to Yang et al., the tick-bourne encephalitis(TBEV) species genome contains a single ORF which is cleaved into 3 structural proteins and 7 nonstructural proteins (https://doi.org/10.1093/nar/gkaa1250).
+
+Q2. How many sequences were assembled?
+A2. 35 sequences were assembled.
+
+Q3. Do some of the sequences look similar to each other?
+A3. There seems to be distinct similarities in the sequences.
+
+[Clustering to find representative proteins]
+Q1. How many sequences remain now?
+A1. 9 sequences remain.
+
+Q2. How well does this agree with what you expected according to your internet search?
+A2. 10 protein sequences were found in literature search, and 9 sequences were found using Plass. 
+
+[Annotating the proteins]
+Q1. Which of the expected proteins do you find?
+A1. The mmseqs search server is closed at the moment.
+
+[Aftermath]
+Publication is available here [https://doi.org/10.1093/cid/cix792]
